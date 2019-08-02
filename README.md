@@ -9,10 +9,10 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 
 ## Spatial normalization of the anatomical T1w reference
 * Look at the images as they transition back and forth and check the following:
-  - Are the ventricles inthe same place?
+  - Are the ventricles in the same place?
   - Is the grey matter/ white matter boundary stable?
   - Does any of the brain in the participant view look especially stretched or distorted?
-  
+ 
 ## Surface reconstruction
 * Similar to what you check for the mask and segmentation
 * The red line should outline the outer boundary of the grey matter and exclude the cerebellum
@@ -21,8 +21,8 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 # Functionals
 ## Susceptibility distortion correction
 * The brains displayed here are functional volumes before and after distortion correction. The blue line is the grey matter/ white matter boundary derived from the anatomical scans
-* The brain after the distorion correction should be better alligned with boundary derived from the functional
-* The after should also appear less distored and shaped more like a normal brain, this may be subtle when the distortion correction is working, but can really, really stand out when it fails.
+* The brain after the distortion correction should be better aligned with boundary derived from the functional
+* The after should also appear less distorted and shaped more like a normal brain, this may be subtle when the distortion correction is working, but can really, really stand out when it fails.
 
 ## Alignment of functional and anatomical MRI data (surface driven)
 * Mouse over to transition back and forth between "fixed" and "moving". Fixed displays the red and blue lines of the freesurfer surfaces on the anatomical image. Moving displays the functional that has been aligned to the structural while retaining the red and blue lines of the grey matter and white matter surface from the anatomical.
@@ -30,7 +30,7 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 * You may have artifacts that cause loss of signal in the more inferior parst of the brain in the functional data. Disregard this drop out and make sure that the parts of the iimage the do have signal are well aligned.
 
 ## Brain mask and (temporal/anatomical) CompCor ROIs
-* Make sure tha the brain mask shown by the red countor is outside the brain in the funcitonal image.
+* Make sure that the brain mask shown by the red contour is outside the brain in the functional image.
 * Make sure the magenta lines are well inside the white matter/CSF.
 * In general, areas outlined by the blue lines should be areas with high CSF or blood flow, such as between the hemispheres, in ventricles, and between the cortex and the cerebellum
 
@@ -39,7 +39,7 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 
 ## BOLD Summary
 * Look for any big spikes in any of the line plots
-* Review the carpet plot (the thing that looks like static) for any columns that all seem to have a jump in values, this will look like verticle bands or lines down the plot.
+* Review the carpet plot (the thing that looks like static) for any columns that all seem to have a jump in values, this will look like vertical bands or lines down the plot.
 
 ## Correlations among nuisance regressors
 * Again, not sure what would be a sign that something was wrong in these plots.
