@@ -49,6 +49,6 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 <img src=https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/Figure1.png>
 
 * And the Temporal components should look like this for signal and noise respectively:
-<img src=https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/index.html>
+<img src=https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/Figure2.png>
 Image from [FSL ICA practical](https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/index.html)
 
