@@ -17,6 +17,8 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 * Similar to what you check for the mask and segmentation
 * The red line should outline the outer boundary of the grey matter and exclude the cerebellum
 * the blue line should follow the boundary between the grey matter and the white matter
+* Here's a good example:
+![Example of good surface reconstruction](images/sub-20900_desc-reconall_T1w.svg)
 
 # Functionals
 ## Susceptibility distortion correction
