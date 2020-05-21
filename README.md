@@ -12,23 +12,25 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
   - Are the ventricles in the same place?
   - Is the grey matter/ white matter boundary stable?
   - Does any of the brain in the participant view look especially stretched or distorted?
-A good example:
+
+* A good example:
 ![anat_good](/images/anat_good.svg)
 
-Dropout on the midline is also okay, as long as the rest of the slices are acceptable:
+* Dropout on the midline is also okay, as long as the rest of the slices are acceptable:
 ![anat_okay](/images/anat_okay.svg)
  
 ## Surface reconstruction
 * Similar to what you check for the mask and segmentation
 * The red line should outline the outer boundary of the grey matter and exclude the cerebellum
 * the blue line should follow the boundary between the grey matter and the white matter
-A good example:
+
+* A good example:
 ![surf_good](/images/surf_good.svg)
 
-Again, some dropout exclusively on the midline is fine:
+* Again, some dropout exclusively on the midline is fine:
 ![surf_okay](/images/surf_okay.svg)
 
-A bad example, note the frontal lobe dropout at z=1:
+* A bad example, note the frontal lobe dropout at z=1:
 ![surf_bad](/images/surf_bad.svg)
 
 # Functionals
@@ -47,19 +49,19 @@ A bad example, note the frontal lobe dropout at z=1:
 * Make sure the magenta lines are well inside the white matter/CSF.
 * In general, areas outlined by the blue lines should be areas with high CSF or blood flow, such as between the hemispheres, in ventricles, and between the cortex and the cerebellum
 
-This is a good example:
+* This is a good example:
 ![func_good](/images/func_good.svg)
 
-Some extra space in the red line is okay:
+* Some extra space in the red line is okay:
 ![func_okay](/images/func_okay.svg)
 
-The striated pixelation is also okay:
+* The striated pixelation is also okay:
 ![func_okay](/images/func_okay.svg)
 
-This one is bad, the image is distorted and the red line is inside the brain:
+* This one is bad, the image is distorted and the red line is inside the brain:
 ![func_bad1](/images/func_bad1.svg)
 
-This one is also bad due to distortion, especially apparent in the axial slices:
+* This one is also bad due to distortion, especially apparent in the axial slices:
 ![func_bad2](/images/func_bad2.svg)
 
 
