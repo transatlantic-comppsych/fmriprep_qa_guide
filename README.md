@@ -39,10 +39,10 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 
 ## Variance explained by t/aCompCor components
 * The voxels remains within the afromentioned brain mask are used to generate compcor curves for the white matter, csf, combined white matter and csf, and temporal variation. 
-* The graphs in this section shows the amount of variance explained by different amounts of components. For example first ~150 components in the white matter mask below, explains the top 50 percent of the varience within nuisance the white matter voxels that sits in the mask ROI.
-* fMRIprep uses these estimations to decide which components to save. As defaul fMRIprep saves those components that contributes in explaining that half of the variance in the ROI. However it can be changed from the settings.  
+* The graphs in this section shows the amount of variance explained by different amounts of components. For example first ~150 components in the white matter mask below, explains the top 50 percent of the variance within nuisance the white matter voxels that sits in the mask ROI.
+* fMRIprep uses these estimations to decide which components to save. As default fMRIprep saves those components that contributes in explaining that half of the variance in the ROI. However it can be changed from the settings.  
+![Variance Plots](images/desc-compcorvar_bold.svg)
 
-![Variance Plots](images/component_variance_map.png)
 
 * Based on the amount of variance that you want to account in your data, you will decide removing the nuisance variants.
 * One thing to take into account that, adding more nuisance regressors comes with removal of more degrees of freedom and less statistical power. 
@@ -50,7 +50,7 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 ## BOLD Summary
 * Contains time series plots for global signal (GS), global signal of CSF (GSCSF), global signal of white matter (GSWM), and two measures of motion DVARS and framewise displacement (FD).
 * Look for any big spikes in any of the line plots.
-* Review the carpet plot (the thing that looks like static that). This plot shows you the time series of each major tissue types. The blue column represents the voxels from cortical areas, orange colum represents subcortical, green is for grap matter and cerebellum, and red for white matter and CSF. For any columns that all seem to have a jump in values, this will look like vertical bands or lines down the plot covers across the entire column for that time point. 
+* Review the carpet plot (the thing that looks like static that). This plot shows you the time series of each major tissue types. The blue column represents the voxels from cortical areas, orange column represents subcortical, green is for gray matter and cerebellum, and red for white matter and CSF. For any columns that all seem to have a jump in values, this will look like vertical bands or lines down the plot covers across the entire column for that time point. 
 
 ## Correlations among nuisance regressors
 * The heat-map plot shows the correlations between different confound nuisance regressors. 
@@ -60,11 +60,11 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 
 ## ICA Components classified by AROMA
 * The brain distribution of ICA components classified as noise should look like this:
-<img src="https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/Figure1_ica.png">
+![ICA Components](images/Figure1_ica.png)
 
 
 * And the Temporal components should look like this for signal and noise respectively:
-<img src="https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/Figure2_ica.png">
 
+![Temporal Components](images/Figure2_ica.png)
 
 Image from [FSL ICA practical](https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/ica/index.html)
