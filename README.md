@@ -39,10 +39,11 @@ Rough draft of a guide for reviewing fmriprep's QA outputs
 
 ## Variance explained by t/aCompCor components
 * The voxels remains within the afromentioned brain mask are used to generate compcor curves for the white matter, csf, combined white matter and csf, and temporal variation. 
-* The graphs in this section shows the amount of variance explained by different amounts of components. For example first ~150 components in the white matter mask below, explains the top 50 percent of the variance within nuisance the white matter voxels that sits in the mask ROI.
-* fMRIprep uses these estimations to decide which components to save. As default fMRIprep saves those components that contributes in explaining that half of the variance in the ROI. However it can be changed from the settings.  
+* The graphs in this section shows the amount of variance explained by different amounts of components. For example the first ~150 components in the white matter mask below explains the top 50 percent of the variance occurs within nuisance white matter voxels estimated by the mask ROI.
+ 
 ![Variance Plots](images/desc-compcorvar_bold.svg)
 
+* fMRIprep uses these estimations to decide which components to save. As default fMRIprep saves those components that contributes in explaining that half of the variance in the ROI. However it can be changed from the settings. 
 
 * Based on the amount of variance that you want to account in your data, you will decide removing the nuisance variants.
 * One thing to take into account that, adding more nuisance regressors comes with removal of more degrees of freedom and less statistical power. 
