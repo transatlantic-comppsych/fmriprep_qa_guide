@@ -2,6 +2,8 @@
 
 Rough draft of a guide for reviewing fmriprep's QA outputs.
 
+Before you start any further analysis you should go to the Error tab and see if there is any error reported and it says "No errors to report!"
+
 
 # Anatomicals
 ## Brain mask and brain tissue segmentation of the T1w
@@ -10,10 +12,13 @@ Rough draft of a guide for reviewing fmriprep's QA outputs.
 
 ## Spatial normalization of the anatomical T1w reference
 * Look at the images as they transition back and forth and check the following:
+  - Is there any missing images, mismatching parameters (eg. voxel size, orientation, dimension), mis-labelling the data?
   - Are the ventricles in the same place?
   - Is the grey matter/ white matter boundary stable?
   - Does any of the brain in the participant view look especially stretched or distorted?
- 
+  - Is there any signal dropout that might have been resulting from a bad shim or other sources of signal distortion?
+  
+
 ## Surface reconstruction
 * Similar to what you check for the mask and segmentation
 * The red line should outline the outer boundary of the grey matter and exclude the cerebellum
@@ -21,7 +26,14 @@ Rough draft of a guide for reviewing fmriprep's QA outputs.
 * Here's a good example:
 ![Example of good surface reconstruction](images/sub-20900_desc-reconall_T1w.svg)
 
+
+
 # Functionals
+* Look at the information text provided to check:
+
+ - Is there any mismatching parameters(TR, phase encoding direction, sequence details, slice timing, susceptibility correction,registration)?
+ -  Is there any non-steady state volumes? Make sure you note them for later on adding to your GLM analysis. 
+
 ## Susceptibility distortion correction
 * The brains displayed here are functional volumes before and after distortion correction. The blue line is the grey matter/ white matter boundary derived from the anatomical scans.
 * The brain after the distortion correction should be better aligned with boundary derived from the functional.
@@ -39,7 +51,7 @@ Rough draft of a guide for reviewing fmriprep's QA outputs.
 * In general, areas outlined by the blue lines should be areas with high CSF or blood flow, such as between the hemispheres, in ventricles, and between the cortex and the cerebellum. These are the most variable voxels, that will be used later on for functional component correction. 
 
 ## Variance explained by t/aCompCor components
-* The voxels remains within the afromentioned brain mask are used to generate compcor curves for the white matter, csf, combined white matter and csf, and temporal variation. 
+* The voxels remains within the aforementioned brain mask are used to generate compcor curves for the white matter, csf, combined white matter and csf, and temporal variation. 
 * The graphs in this section shows the amount of variance explained by different amounts of components. For example the first ~150 components in the white matter mask below explains the top 50 percent of the variance occurs within nuisance white matter voxels estimated by the mask ROI.
  
 ![Variance Plots](images/desc-compcorvar_bold.svg)
