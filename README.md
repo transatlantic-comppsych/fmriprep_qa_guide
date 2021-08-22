@@ -4,6 +4,8 @@ Rough draft of a guide for reviewing fmriprep's QA outputs.
 
 Before you start any further analysis you should go to the Error tab and see if there is any error reported and it says "No errors to report!"
 
+As a general rule of thumb, check whether an abnormal pattern of spikes, movements, or noise elements that you can associate with a specific thing associated with your data collection.
+
 
 # Anatomicals
 ## Brain mask and brain tissue segmentation of the T1w
@@ -17,6 +19,8 @@ Before you start any further analysis you should go to the Error tab and see if 
   - Is the grey matter/ white matter boundary stable?
   - Does any of the brain in the participant view look especially stretched or distorted?
   - Is there any signal dropout that might have been resulting from a bad shim or other sources of signal distortion?
+  - Is there a good left and right symmetry? 
+  - Look at how well the gyrus patterns in overall? 
   
 
 ## Surface reconstruction
@@ -71,10 +75,15 @@ Before you start any further analysis you should go to the Error tab and see if 
 * High correlations can maybe explained by a motion that caused a signal change in one tissue type that affects the other.
 * Similarly, the bar chart shows the extent of correlation between the different tissue specific regressors and the global signal. 
 * The components shows high correlation could be considered as the nuisance regressors and used in the model.
+* Ideally all these components should be capturing the different elements, noise in your data. However if you see that every single components correlate with the global signal in a high level then,it means something might be wrong and needs further investigation with the data. 
 
 ## ICA Components classified by AROMA
 * The brain distribution of ICA components classified as noise should look like this:
 ![ICA Components](images/Figure1_ica.png)
+
+Observe the ICA components to catch the patterns which either might be related to the noise components (eg. movement related artefacts or button press related activations around SMC, or horizontal eye movements etc.) or regarding the task related activations and be aware of those patterns in your data. 
+
+You can evaluate whether the some of the ICA components that are related as noise to correspond the findings in the FD and carpet plot, associated with big spikes and noise.
 
 
 * And the Temporal components should look like this for signal and noise respectively:
