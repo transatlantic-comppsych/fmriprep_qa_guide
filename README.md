@@ -6,6 +6,8 @@ Before you start any further analysis you should go to the Error tab and see if 
 
 As a general rule of thumb, check whether an abnormal pattern of spikes, movements, or noise elements that you can associate with a specific thing associated with your data collection.
 
+The examples here cover some issues you might see, including these scans or not depends on the specific goals of your analysis.
+
 
 # Anatomicals
 ## Brain mask and brain tissue segmentation of the T1w
@@ -21,40 +23,14 @@ As a general rule of thumb, check whether an abnormal pattern of spikes, movemen
   - Is there any signal dropout that might have been resulting from a bad shim or other sources of signal distortion?
   - Is there a good left and right symmetry? 
   - Look at how well the gyrus patterns in overall? 
-* A good example:
-![anat_good](/images/anat_good.gif)
-
-* Missing matter on the midline (x=0) might look troubling, but often this is just the nature of the midline slice. As long as the other slices look normal, this is acceptable. This subject also looks odd due to the large ventricles, but this is just the shape of their brain:
-![anat_okay](/images/anat_okay.gif)
-
-* In this image, some of the dura was picked up by the registration. This one should be excluded.
-![anat_bad](/images/anat_bad.gif)
 
 
 ## Surface reconstruction
 * Similar to what you check for the mask and segmentation
 * The red line should outline the outer boundary of the grey matter and exclude the cerebellum
-* the blue line should follow the boundary between the grey matter and the white matter
+* The blue line should follow the boundary between the grey matter and the white matter
 * Here's a good example:
 ![Example of good surface reconstruction](images/sub-20900_desc-reconall_T1w.svg)
-
-
-
-* A good example:
-![surf_good](/images/surf_good.svg)
-
-* Again, some dropout exclusively on the midline is fine:
-![surf_okay](/images/surf_okay.svg)
-
-* A example to exclude due to inclusion of dura at x=-2:
-![surf_bad_dura](/images/surf_bad_dura.svg)
-
-* A example to exclude due to exclusion of gray matter at z=-4 on the top left:
-![surf_bad_matter](/images/surf_bad_matter.svg)
-
-* Another example to exclude due to exclusion of gray matter, this time in the right frontal lobe at z=14:
-![surf_bad_matter2](/images/surf_bad_matter2.svg)
-
 
 # Functionals
 * Look at the information text provided to check:
@@ -77,9 +53,6 @@ As a general rule of thumb, check whether an abnormal pattern of spikes, movemen
 * Make sure that the brain mask shown by the red contour is outside the brain in the functional image.
 * Make sure the magenta lines are well inside the white matter/CSF. 
 * In general, areas outlined by the blue lines should be areas with high CSF or blood flow, such as between the hemispheres, in ventricles, and between the cortex and the cerebellum. These are the most variable voxels, that will be used later on for functional component correction. 
-
-* This is a good example:
-![func_good](/images/func_good.gif)
 
 * This one is worth checking, as the red line cuts of some of the spinal cord at the bottom. Ultimately, this is usable:
 ![func_okay_cutoff](/images/func_okay_cutoff.svg)
